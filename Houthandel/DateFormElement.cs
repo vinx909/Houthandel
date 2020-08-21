@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Glashandel;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Windows.Forms;
 
 namespace OuderbijdrageSchool
 {
-    class DateFormElement
+    class DateFormElement:FormElement
     {
         private const int textBoxOfsetDefault = 100;
         private const int textBoxBetweenOfsetDefault = 30;
@@ -34,11 +35,8 @@ namespace OuderbijdrageSchool
         private TextBox textBoxMonth;
         private TextBox textBoxYear;
 
-        private Form form;
-
-        public DateFormElement(Form form, string labelText)
+        public DateFormElement(Form form, string labelText):base(form)
         {
-            this.form = form;
             textBoxOfset = textBoxOfsetDefault;
             textBoxBetweenOfset = textBoxBetweenOfsetDefault;
             textBoxWidth = textBoxWidthDefault;
@@ -63,11 +61,7 @@ namespace OuderbijdrageSchool
             form.Controls.Add(textBoxYear);
         }
 
-        public void ChangePosition(int widthOfset, int heightOfset)
-        {
-            CorrectPosition(widthOfset, heightOfset);
-        }
-        private void CorrectPosition(int widthOfset, int heightOfset)
+        protected override void AlterPosition(int widthOfset, int heightOfset)
         {
             label.Location = new Point(widthOfset, heightOfset);
             textBoxDay.Location = new Point(widthOfset + textBoxOfset, heightOfset);

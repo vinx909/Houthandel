@@ -72,7 +72,7 @@ namespace OuderbijdrageSchool
         {
             int[] date = new int[dateArrayLength];
             date[dateDayIndex] = GetDateDay();
-            date[dateMonthIndex] = GetDayMonth();
+            date[dateMonthIndex] = GetDateMonth();
             date[dateYearIndex] = GetDateYear();
             return date;
         }
@@ -87,7 +87,7 @@ namespace OuderbijdrageSchool
                 return noIntDay;
             }
         }
-        public int GetDayMonth()
+        public int GetDateMonth()
         {
             try
             {

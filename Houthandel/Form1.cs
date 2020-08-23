@@ -75,10 +75,10 @@ namespace Houthandel
             double volume = woodOrderVolume.GetValueAsDouble();
             double scrapeSurfase = woodOrderScrapeSurfase.GetValueAsDouble();
             int orderDay = woodOrderOrderDate.GetDateDay();
-            int orderMonth = woodOrderOrderDate.GetDayMonth();
+            int orderMonth = woodOrderOrderDate.GetDateMonth();
             int orderYear = woodOrderOrderDate.GetDateYear();
             int deliveryDay = woodOrderDeliveryDate.GetDateDay();
-            int deliveryMonth = woodOrderDeliveryDate.GetDayMonth();
+            int deliveryMonth = woodOrderDeliveryDate.GetDateMonth();
             int deliveryYear = woodOrderDeliveryDate.GetDateYear();
             double cost = TimberTradeCost.GetCost(className, volume, scrapeSurfase, orderDay, orderMonth, orderYear, deliveryDay, deliveryMonth, deliveryYear);
             MessageBox.Show(messageBoxShowCostString + cost);
